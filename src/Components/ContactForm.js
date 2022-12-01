@@ -5,7 +5,11 @@ import EditContactForm from './EditContactForm'
 
 const ContactForm = () => {
 
-    const [contacts, setContacts] = useState([])
+    const [contacts, setContacts] = useState([
+        {id:1, name:'chan', phone:'320209340', email:'chanbasha@gmail.com'},
+        {id:2, name:'drlng', phone:'294039303', email:'drlng123@gmail.com'},
+        {id:3, name:'honey', phone:'830293029', email:'honey1116@gmail.com'}
+    ])
 
     const [contactName, setContactName] = useState('')
     const [contactEmail, setContactEmail] = useState('')
@@ -106,7 +110,7 @@ const ContactForm = () => {
             <div className='col-md-8'>               
 
                 <div className='d-flex align-items-center gap-5 mb-4'>
-                    <h4 className='mb-0 flex-grow-1'>Contacts ({contacts.length})</h4>
+                    <h4 className='mb-0 flex-grow-1'>Contacts ({(searchVal.length)?searchResults.length:contacts.length})</h4>
                     <div className='flex-shrink-0 d-flex gap-3'>
                         <div className='input-group'>
                             <input type='search' className='form-control border-end-0' ref={searchInput} value={searchVal} onChange={()=>handleSearch()} placeholder='Search Contact' />
